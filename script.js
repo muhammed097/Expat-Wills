@@ -2,6 +2,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Lucide Icons
     lucide.createIcons();
 
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            // Change icon
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+                body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+                lucide.createIcons();
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && e.target !== menuToggle) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+                lucide.createIcons();
+            }
+        });
+    }
+
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
