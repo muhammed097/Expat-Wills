@@ -97,31 +97,55 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form Submissions
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('button');
-            const container = btn.parentElement;
             const originalText = btn.innerText;
+            const formData = new FormData(form);
+            const action = form.getAttribute('action');
 
-            btn.innerText = 'Processing...';
+            if (!action || action.includes('YOUR_FORM_ID_HERE')) {
+                alert('Please set up your Formspree ID in index.html first!');
+                return;
+            }
+
+            btn.innerText = 'Sending...';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                const successMsg = document.createElement('p');
-                successMsg.innerText = '✓ Application received successfully!';
-                successMsg.style.color = 'var(--success)';
-                successMsg.style.marginTop = '15px';
-                successMsg.style.fontWeight = '600';
-                successMsg.style.animation = 'fadeIn 0.5s ease-out';
+            try {
+                const response = await fetch(action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-                form.appendChild(successMsg);
+                if (response.ok) {
+                    const successMsg = document.createElement('p');
+                    successMsg.innerText = '✓ Thank you! We will contact you shortly.';
+                    successMsg.style.color = 'var(--success)';
+                    successMsg.style.marginTop = '15px';
+                    successMsg.style.fontWeight = '600';
+                    successMsg.style.animation = 'fadeIn 0.5s ease-out';
+
+                    form.appendChild(successMsg);
+                    form.reset();
+                    setTimeout(() => successMsg.remove(), 5000);
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert(data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert('Oops! There was a problem submitting your form');
+                    }
+                }
+            } catch (error) {
+                alert('Oops! There was a problem connecting to the server');
+            } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;
-                form.reset();
-
-                setTimeout(() => successMsg.remove(), 5000);
-            }, 1000);
+            }
         });
     });
 });
