@@ -128,9 +128,18 @@ header {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
+}
+
+.logo img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
 }
 
 nav ul {
@@ -761,6 +770,11 @@ footer {
     .hero p {
         font-size: 1.1rem;
         margin-bottom: 2rem;
+    }
+
+    .trust-bar {
+        justify-content: center;
+        text-align: left;
     }
 
     .hero-form-container {
