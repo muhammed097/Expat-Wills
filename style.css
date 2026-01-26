@@ -711,6 +711,15 @@ footer {
 
 /* Responsive */
 @media (max-width: 991px) {
+    section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
     .mobile-menu-toggle {
         display: block;
     }
@@ -751,9 +760,16 @@ footer {
         width: 100%;
     }
 
+    /* Hero Responsive */
+    .hero {
+        padding-top: 120px;
+        min-height: auto;
+        background-attachment: scroll;
+        /* Better for mobile performance */
+    }
+
     .hero .container {
         grid-template-columns: 1fr;
-        padding-top: 60px;
         gap: 40px;
         text-align: center;
     }
@@ -763,13 +779,15 @@ footer {
     }
 
     .hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.1;
     }
 
     .hero p {
         font-size: 1.1rem;
         margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .trust-bar {
@@ -780,68 +798,170 @@ footer {
     .hero-form-container {
         max-width: 100%;
         margin: 0 auto;
-        padding: 25px 20px;
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    /* Services Responsive */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px;
+    }
+
+    /* Benefits Responsive */
+    .benefits {
+        padding: 80px 0 40px;
+    }
+
+    .benefits-grid {
+        gap: 25px;
+        padding: 0 15px;
     }
 
     .modern-card {
-        padding: 40px 30px;
+        padding: 40px 20px;
         flex-direction: column;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
         height: auto;
         position: static;
-        margin-bottom: 30px;
+        margin-bottom: 0;
         transform: none !important;
+        border-radius: 20px;
     }
 
     .modern-card h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .modern-card p {
+        font-size: 1.1rem;
     }
 
     .card-visual {
         max-width: 100%;
+        width: 100%;
+    }
+
+    .visual-mockup {
+        max-width: 100%;
+        border-radius: 12px;
+        transform: none !important;
     }
 }
 
 @media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+    }
+
+    .phone-group .country-code {
+        padding: 0 10px;
+    }
+
     .header-container {
         padding: 15px 20px;
     }
 
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+    .logo {
+        font-size: 1.3rem;
     }
 
+    .logo img {
+        height: 32px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Process Timeline Responsive */
     .process-timeline {
-        padding-left: 35px;
+        padding-left: 30px;
+    }
+
+    .process-step {
+        margin-bottom: 40px;
     }
 
     .process-step::before {
         left: -37px;
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         border-width: 4px;
+        top: 4px;
     }
 
+    .process-step h3 {
+        font-size: 1.3rem;
+    }
+
+    /* FAQ Responsive */
+    .faq-question {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    /* Footer Responsive */
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: left;
+    }
+
+    .footer-col .logo {
+        justify-content: flex-start;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .disclaimer {
+        text-align: left;
+        padding-top: 25px;
     }
 }
 
 @media (max-width: 540px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .hero-form-container h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1.2rem;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    .btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
     }
 
     .phone-group .country-code {
-        flex: 0 0 65px;
+        flex: 0 0 60px;
         font-size: 0.85rem;
     }
 }
