@@ -32,11 +32,15 @@
                 <span>ExpatWills</span>
             </div>
             <nav id="nav-menu">
+                <div class="mobile-nav-logo">
+                    <img src="assets/images/logo.png" alt="ExpatWills Logo">
+                    <span>ExpatWills</span>
+                </div>
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#process">Our Process</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><button class="btn btn-primary" style="padding: 10px 25px;">Enquire Now</button></li>
+                    <li><a href="#hero-form" class="btn btn-primary" style="padding: 10px 25px;">Register Now</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-toggle" id="menu-toggle">
@@ -70,21 +74,25 @@
                         <label>Email Address</label>
                         <input type="email" name="_replyto" placeholder="john@example.com" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label>Phone Number</label>
                         <div class="phone-group">
                             <div class="country-code">+971</div>
                             <input type="tel" name="phone" placeholder="123 456 789" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Emirate of Residence</label>
-                        <input type="text" name="emirate" placeholder="e.g. Dubai / Abu Dhabi / Other" required>
-                    </div>
                     <div class="form-group full-width">
-                        <label>Your Message</label>
-                        <textarea name="message" placeholder="Tell us more about your requirements..."
-                            rows="4"></textarea>
+                        <label>Emirate of Residence</label>
+                        <select name="emirate" required>
+                            <option value="" disabled selected>Select Emirate</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Abu Dhabi">Abu Dhabi</option>
+                            <option value="Sharjah">Sharjah</option>
+                            <option value="Ajman">Ajman</option>
+                            <option value="Umm Al Quwain">Umm Al Quwain</option>
+                            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                            <option value="Fujairah">Fujairah</option>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-secondary" style="width: 100%;">Register Now</button>
@@ -225,38 +233,28 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title" data-animate>Help & Answers</h2>
+            <h2 class="section-title" data-animate>Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item" data-animate>
                     <button class="faq-question">
-                        <span>Are you the official service provider?</span>
+                        <span>What is an expat will?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No, we connect UAE expats with licensed legal partners registered with DIFC and ADJD. We
-                            streamline the process, but all wills are drafted and registered by qualified UAE attorneys.
-                        </p>
+                        <p>n expat will is a legal document that allows foreign nationals living in the UAE to specify
+                            how their assets should be distributed after their death, ensuring their wishes are honored
+                            according to their home country's laws rather than default UAE Sharia inheritance laws. </p>
                     </div>
                 </div>
                 <div class="faq-item" data-animate>
                     <button class="faq-question">
-                        <span>How long does the process take?</span>
+                        <span>Why do I need a will in the UAE?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Typically 10-14 days from consultation to registered will. This includes drafting (3-5 days),
-                            review (1-2 days), and official DIFC/ADJD registration (5-7 days). Urgent cases can be
-                            expedited.</p>
-                    </div>
-                </div>
-                <div class="faq-item" data-animate>
-                    <button class="faq-question">
-                        <span>Is my data secure?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes. All information is encrypted and shared only with your assigned legal partner under
-                            strict confidentiality. Your data is never sold or used for marketing.</p>
+                        <p>Without a will, your assets in the UAE will be distributed according to Sharia law,
+                            regardless of your religion or nationality. This may not align with your wishes and could
+                            create complications for your family.</p>
                     </div>
                 </div>
                 <div class="faq-item" data-animate>
@@ -265,9 +263,20 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes. Your home country will doesn't cover UAE assets like Dubai property or local bank
-                            accounts. Without a UAE-registered will, Sharia law applies automatically — even to
-                            non-Muslims.</p>
+                        <p>Yes. A will from your home country typically does not cover UAE-based assets such as
+                            property, bank accounts, or investments. You need a separate UAE-registered will for these
+                            assets.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>Can I have more than one will?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you can have multiple wills for assets in different countries. However, ensure they
+                            don't contradict each other and clearly specify which assets each will covers.</p>
                     </div>
                 </div>
                 <div class="faq-item" data-animate>
@@ -276,11 +285,9 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p><strong>DIFC:</strong> For Dubai and Northern Emirates residents<br>
-                            <strong>ADJD:</strong> For Abu Dhabi residents only<br>
-                            Both override Sharia law for non-Muslims. We recommend the correct registry based on your
-                            Emirates ID.
-                        </p>
+                        <p>DIFC wills cover assets across all UAE emirates and follow common law principles. ADJD (Abu
+                            Dhabi Judicial Department) wills primarily cover assets in Abu Dhabi. Both allow non-Muslims
+                            to bypass Sharia inheritance laws.</p>
                     </div>
                 </div>
                 <div class="faq-item" data-animate>
@@ -343,7 +350,10 @@
                             style="filter: brightness(0) invert(1);">
                         <span>ExpatWills</span>
                     </div>
-                    <p style="color: rgba(255,255,255,0.7);">Making global legal services accessible and simple.</p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Making global legal services accessible
+                        and simple. We specialize in expert-led Will registration and comprehensive estate planning
+                        solutions tailored for expatriates in the UAE, ensuring your legacy is protected with precision
+                        and care.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -357,8 +367,8 @@
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
                         <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
@@ -366,7 +376,8 @@
                     <h4>Contact</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:hello@expatwills.com">info@expatwills.com</a></li>
-                        <li><a href="tel:+123456789">+1 (234) 567-89</a></li>
+                        <li><a href="tel:+971558823458">+971 55 882 3458</a></li>
+                        <li><a href="tel:+123456789">United Arab Emirates</a></li>
                     </ul>
                 </div>
             </div>

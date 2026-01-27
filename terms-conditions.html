@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | ExpatWills</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-hero {
+            position: relative;
+            padding: 180px 5% 30px;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 77, 61, 0.9), rgba(0, 77, 61, 0.7));
+            z-index: 1;
+        }
+
+        .legal-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        .legal-page {
+            padding: 40px 5% 100px;
+            background-color: #fcfcfc;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px 80px 80px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 77, 61, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            z-index: 5;
+        }
+
+        .last-updated-badge {
+            display: inline-block;
+            background: rgba(0, 77, 61, 0.05);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .legal-content {
+            margin-top: 40px;
+            padding-top: 0;
+        }
+
+        .legal-content p:first-of-type {
+            margin-top: 5px;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin: 50px 0 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legal-content h2::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .legal-content p {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .legal-content ul {
+            margin-bottom: 40px;
+            list-style: none;
+        }
+
+        .legal-content li {
+            position: relative;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            border-radius: 16px;
+            color: var(--text-light);
+            line-height: 1.7;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+
+        .legal-content li:hover {
+            border-color: rgba(255, 125, 97, 0.2);
+            transform: translateX(5px);
+        }
+
+        .legal-content li strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .legal-content li span {
+            font-weight: 400;
+            display: block;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .legal-container {
+                padding: 40px;
+                border-radius: 0;
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+
+            .legal-page {
+                padding: 40px 0;
+                background-color: var(--white);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .legal-hero {
+                padding: 150px 5% 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="ExpatWills Logo">
+                <span>ExpatWills</span>
+            </a>
+            <nav id="nav-menu">
+                <div class="mobile-nav-logo">
+                    <img src="assets/images/logo.png" alt="ExpatWills Logo">
+                    <span>ExpatWills</span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#hero-form" class="btn btn-primary" style="padding: 10px 25px;">Register
+                            Now</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span style="color: var(--secondary);">Terms & Conditions</span>
+            </nav>
+            <h1>Terms & Conditions</h1>
+            <p style="opacity: 0.9; font-size: 1.1rem;">Governing the use of ExpatWills services in the UAE</p>
+        </div>
+    </section>
+
+    <main class="legal-page">
+        <div class="legal-container">
+            <div class="last-updated-badge">Last Updated: January 27, 2026</div>
+
+            <section class="legal-content">
+                <p>Welcome to ExpatWills. By using our services, you agree to comply with and be bound by the following
+                    terms and conditions, which are governed by the laws of the United Arab Emirates.</p>
+
+                <ul>
+                    <li><strong>Service Engagement:</strong> <span>ExpatWills acts as a facilitator and consultant for
+                            Will registration in the UAE. We connect clients with licensed legal partners for drafting
+                            and official registration.</span></li>
+
+                    <li><strong>No Legal Advice:</strong> <span>While we provide guidance on Will registration processes
+                            (DIFC, ADJD), ExpatWills is not a law firm. All formal legal advice and document drafting
+                            are conducted by our network of accredited UAE legal partners.</span></li>
+
+                    <li><strong>Client Responsibilities:</strong> <span>Clients are responsible for providing accurate
+                            and complete information regarding their assets and residency. ExpatWills is not liable for
+                            issues arising from undisclosed or incorrect information.</span></li>
+
+                    <li><strong>Registration Fees:</strong> <span>All fees paid for administrative and facilitation
+                            services are clearly outlined before engagement. Government registration fees (DIFC/ADJD)
+                            are separate and subject to current UAE regulations.</span></li>
+
+                    <li><strong>Confidentiality:</strong> <span>We maintain strict confidentiality of all client data in
+                            accordance with UAE data protection laws. Information is only shared with authorized legal
+                            partners and government bodies for the purpose of Will registration.</span></li>
+
+                    <li><strong>Limitation of Liability:</strong> <span>ExpatWills shall not be held liable for changes
+                            in UAE law that may occur after the registration of a Will. We recommend regular reviews of
+                            your Will to ensure ongoing compliance.</span></li>
+
+                    <li><strong>Jurisdiction:</strong> <span>Any disputes arising from these terms shall be subject to
+                            the exclusive jurisdiction of the courts of the United Arab Emirates.</span></li>
+                </ul>
+
+                <p>For any inquiries regarding these terms, please contact us at info@expatwills.com.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: var(--white); margin-bottom: 20px;">
+                        <img src="assets/images/logo.png" alt="ExpatWills Logo"
+                            style="filter: brightness(0) invert(1);">
+                        <span>ExpatWills</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">Making global legal services accessible
+                        and simple. We specialize in expert-led Will registration and comprehensive estate planning
+                        solutions tailored for expatriates in the UAE, ensuring your legacy is protected with precision
+                        and care.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#hero-form">Register Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@expatwills.com">info@expatwills.com</a></li>
+                        <li><a href="tel:+971558823458">+971 55 882 3458</a></li>
+                        <li><a href="#">United Arab Emirates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="disclaimer">
+                ExpatWills is an independent facilitator and consultant. We are not a law firm; legal services are
+                provided through our network of licensed partner attorneys and accredited entities.
+            </div>
+            <div style="text-align: left; margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 0.8rem;">
+                &copy; 2026 ExpatWills. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        // Basic Mobile Menu Logic for Legal Pages
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const body = document.body;
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.setAttribute('data-lucide', 'x');
+                    body.style.overflow = 'hidden';
+                } else {
+                    icon.setAttribute('data-lucide', 'menu');
+                    body.style.overflow = 'auto';
+                }
+                lucide.createIcons();
+            });
+        }
+    </script>
+</body>
+
+</html>
