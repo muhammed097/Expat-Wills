@@ -181,7 +181,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     padding-top: 100px;
-    background: url('https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+    background: url('assets/images/expat\ wills\ hero.webp') no-repeat center center/cover;
     overflow: hidden;
 }
 
@@ -704,10 +704,23 @@ footer {
 
 .footer-links li {
     margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-links i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--secondary);
 }
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
 }
 
 .footer-links a:hover {
