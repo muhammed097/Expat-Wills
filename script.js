@@ -1,203 +1,164 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle Functionality
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileMenuClose = document.getElementById('mobileMenuClose');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-    function toggleMenu() {
-        const isActive = mobileMenuOverlay.classList.contains('active');
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const body = document.body;
 
-        if (isActive) {
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        } else {
-            mobileMenuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-    }
-
-    if (mobileMenuToggle && mobileMenuOverlay) {
-        mobileMenuToggle.addEventListener('click', (e) => {
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            toggleMenu();
+            navMenu.classList.toggle('active');
+            // Change icon
+            const icon = menuToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+                body.style.overflow = 'hidden'; // Prevent scrolling
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+            }
+            lucide.createIcons();
         });
 
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', () => {
-                toggleMenu();
-            });
-        }
-
-        // Close mobile menu when clicking on a nav link
-        mobileLinks.forEach(link => {
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+                lucide.createIcons();
             });
         });
 
-        // Close mobile menu when clicking outside the container
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) {
-                toggleMenu();
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && e.target !== menuToggle) {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+                body.style.overflow = 'auto';
+                lucide.createIcons();
             }
         });
     }
 
-    // Active link highlighting on scroll
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Number Animation
-    const animateNumbers = () => {
-        const stats = document.querySelectorAll('.stat-number');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    const targetText = target.getAttribute('data-target');
-                    if (!targetText) return;
-
-                    const targetValue = parseFloat(targetText);
-                    const suffix = target.getAttribute('data-suffix') || '';
-                    const decimals = parseInt(target.getAttribute('data-decimals')) || 0;
-                    const separator = target.getAttribute('data-separator') || '';
-
-                    const duration = 2000;
-                    const steps = 60;
-                    const stepTime = duration / steps;
-
-                    let currentVal = 0;
-                    const increment = targetValue / steps;
-
-                    const timer = setInterval(() => {
-                        currentVal += increment;
-
-                        if (currentVal >= targetValue) {
-                            currentVal = targetValue;
-                            clearInterval(timer);
-                        }
-
-                        let formatted = currentVal.toFixed(decimals);
-
-                        if (separator) {
-                            const parts = formatted.split('.');
-                            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, separator);
-                            formatted = parts.join('.');
-                        }
-
-                        target.textContent = formatted + suffix;
-                    }, stepTime);
-
-                    observer.unobserve(target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        stats.forEach(stat => observer.observe(stat));
-    };
-
-    animateNumbers();
-
-    // FAQ Accordion Functionality
+    // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-
         question.addEventListener('click', () => {
-            // Close other open items
+            // Close other items
             faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
+                if (otherItem !== item) {
                     otherItem.classList.remove('active');
                 }
             });
-
             // Toggle current item
             item.classList.toggle('active');
         });
     });
 
-    // Animated Counter for Statistics
-    function animateCounter(element) {
-        const target = parseFloat(element.getAttribute('data-target'));
-        const suffix = element.getAttribute('data-suffix') || ''; // Get suffix if it exists
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60fps
-        let current = 0;
-        const isDecimal = target % 1 !== 0;
-        const needsStars = (target === 4.3); // Add stars for 4.3
+    // Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.1
+    };
 
-
-        const updateCounter = () => {
-            current += increment;
-
-            if (current < target) {
-                if (isDecimal) {
-                    element.textContent = current.toFixed(1);
-                } else if (target >= 1000) {
-                    element.textContent = Math.floor(current).toLocaleString();
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-                requestAnimationFrame(updateCounter);
-            } else {
-                // Final value with proper formatting
-                if (isDecimal) {
-                    if (needsStars) {
-                        element.innerHTML = target.toFixed(1) + ' <span class="star-rating">★★★★½</span> <span class="google-review-text">Google Review</span>';
-                    } else {
-                        element.textContent = target.toFixed(1);
-                    }
-                } else if (target >= 1000) {
-                    element.textContent = target.toLocaleString() + suffix;
-                } else {
-                    element.textContent = target + suffix;
-                }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
             }
-        };
+        });
+    }, observerOptions);
 
-        updateCounter();
-    }
+    document.querySelectorAll('[data-animate]').forEach(el => {
+        observer.observe(el);
+    });
 
-    // Intersection Observer for triggering animation
-    const statNumbers = document.querySelectorAll('.stat-number');
+    // Sticky Header
+    const header = document.querySelector('header');
+    const headerContainer = document.querySelector('.header-container');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            headerContainer.style.padding = '12px 20px';
+            header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)';
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            headerContainer.style.padding = '20px 20px';
+            header.style.boxShadow = 'none';
+            header.style.background = 'rgba(255, 255, 255, 0.9)';
+        }
+    });
 
-    if (statNumbers.length > 0) {
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px'
-        };
+    // Form Submissions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            const formData = new FormData(form);
+            const action = form.getAttribute('action');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    entry.target.classList.add('counted');
-                    animateCounter(entry.target);
+            if (!action || action.includes('YOUR_FORM_ID_HERE')) {
+                alert('Please set up your Formspree ID in index.html first!');
+                return;
+            }
+
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const successMsg = document.createElement('p');
+                    successMsg.innerText = '✓ Thank you! We will contact you shortly.';
+                    successMsg.style.color = 'var(--success)';
+                    successMsg.style.marginTop = '15px';
+                    successMsg.style.fontWeight = '600';
+                    successMsg.style.animation = 'fadeIn 0.5s ease-out';
+
+                    form.appendChild(successMsg);
+                    form.reset();
+                    setTimeout(() => successMsg.remove(), 5000);
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert(data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert('Oops! There was a problem submitting your form');
+                    }
                 }
-            });
-        }, observerOptions);
-
-        statNumbers.forEach(stat => observer.observe(stat));
-    }
+            } catch (error) {
+                alert('Oops! There was a problem connecting to the server');
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        });
+    });
 });
+
+// Add keyframes for fadeIn if not in CSS
+if (!document.querySelector('#dynamic-styles')) {
+    const style = document.createElement('style');
+    style.id = 'dynamic-styles';
+    style.innerHTML = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+}

@@ -4,451 +4,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credora - Insurance Services</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVZYZXYTP0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JVZYZXYTP0');
+    </script>
+    <title>ExpatsWills | Expert Global Will Facilitation</title>
+    <meta name="description"
+        content="Secure your legacy with expert global will facilitation. We bridge the gap between you and world-class estate planning.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="container container-header">
-            <a href="index.html" class="logo" style="text-decoration: none;">
-                <span class="logo-text">Credora</span>
-                <span class="logo-subtitle">FINANCING BROKERS LLC</span>
-            </a>
 
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html#home" class="nav-link active">Home</a></li>
-                    <li><a href="index.html#services" class="nav-link">Services</a></li>
-                    <li><a href="about-us.html" class="nav-link">About Us</a></li>
-                    <li><a href="faq.html" class="nav-link">FAQs</a></li>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="expatsWills Logo">
+                <span>ExpatsWills</span>
+            </div>
+            <nav id="nav-menu">
+                <div class="mobile-nav-logo">
+                    <img src="assets/images/logo.png" alt="expatsWills Logo">
+                    <span>ExpatsWills</span>
+                </div>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#home" class="btn btn-primary" style="padding: 10px 25px;">Register Now</a></li>
                 </ul>
             </nav>
-
-            <a href="contact-us.html" class="contact-btn" style="text-decoration: none; display: inline-block;">Contact
-                Us</a>
-            <div class="company-tag-wrapper">
-                <span class="company-tag">AN INNOVATIONS<br>GROUP COMPANY</span>
-            </div>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="mobile-menu-toggle" id="menu-toggle">
+                <i data-lucide="menu"></i>
             </button>
         </div>
     </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        CONNECTING YOU<br>
-                        TO THE RIGHT BANK,<br>
-                        THE EASY WAY
-                    </h1>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-animate>
+                <h1>Expats Will Services in the UAE – Protect Your Assets & Family</h1>
+                <p>Facilitated expats Will registration for non-Muslim residents in the UAE, connecting you with licensed
+                    legal professionals for legally valid wills under UAE law.</p>
+
+                <div class="trust-bar">
+                    <i data-lucide="shield-check"></i>
+                    <span>Drafted & registered by licensed UAE legal partners</span>
                 </div>
-                <div class="hero-description-box">
-                    <p class="hero-text">
-                        We are the largest authorized agency connecting you to all the top banks in the UAE. We offer
-                        reliable, and convenient financial solutions all in one place. From credit cards and personal
-                        loans to business financing, our team ensures a smooth and transparent process, guiding you
-                        every step of the way until approval and beyond.
-                    </p>
-                    <button class="get-started-btn">
-                        Get Started
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
+            </div>
+
+            <div class="hero-form-container" data-animate>
+                <h3>Register Your UAE Expats Will</h3>
+                <form id="hero-form" class="form-grid" action="https://formspree.io/f/xdazaegv" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="_replyto" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Phone Number</label>
+                        <div class="phone-group">
+                            <div class="country-code">+971</div>
+                            <input type="tel" name="phone" placeholder="50 456 7890" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Emirate of Residence</label>
+                        <select name="emirate" required>
+                            <option value="" disabled selected>Select Emirate</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Abu Dhabi">Abu Dhabi</option>
+                            <option value="Sharjah">Sharjah</option>
+                            <option value="Ajman">Ajman</option>
+                            <option value="Umm Al Quwain">Umm Al Quwain</option>
+                            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                            <option value="Fujairah">Fujairah</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary" style="width: 100%;">Book Your Free Will
+                        Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-animate>Why UAE Expats Need a Will</h2>
+            <div class="services-grid">
+                <div class="service-card" data-animate>
+                    <div class="service-icon"><i data-lucide="globe"></i></div>
+                    <h3>Protect UAE Assets from Probate Delays</h3>
+                    <p>A UAE-registered will prevents asset freezes and court delays, ensuring your property, bank
+                        accounts, and investments are transferred smoothly to your loved ones.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon"><i data-lucide="briefcase"></i></div>
+                    <h3>Legally Appoint Guardians for Your Children</h3>
+                    <p>Without a UAE-registered will, courts decide your children’s guardianship. A will lets you
+                        legally appoint trusted guardians and protect your children’s future.</p>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon"><i data-lucide="users"></i></div>
+                    <h3>Avoid Jurisdictional Conflicts with Your Home Country</h3>
+                    <p>Many expats assume their home country covers UAE assets — it doesn’t. We handle your Dubai
+                        property and accounts separately, avoiding legal delays and conflicts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title" data-animate>Advantages of a UAE Expats Will</h2>
+
+            <div class="benefits-grid">
+                <!-- Card 1 -->
+                <div class="modern-card" data-animate>
+                    <div class="card-content">
+                        <h3>Protect Your Children's Inheritance</h3>
+                        <p>Ensure your children receive their intended shares according to your wishes, without court
+                            intervention or Sharia law distribution.</p>
+                    </div>
+                    <div class="card-visual">
+                        <img src="assets/images/expat%20wills%20hero.webp" alt="Family security" class="visual-mockup">
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="modern-card" data-animate>
+                    <div class="card-content">
+                        <h3>Safeguard Your Business Assets</h3>
+                        <p>Maintain the stability of your business without the need to liquidate assets during uncertain
+                            times or probate delays.</p>
+                    </div>
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"
+                            alt="Asset protection" class="visual-mockup">
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="modern-card" data-animate>
+                    <div class="card-content">
+                        <h3>Avoid Default UAE Inheritance Laws</h3>
+                        <p>Ensure your assets are distributed according to your wishes, rather than being subject to
+                            Sharia inheritance rules that apply automatically to expats.</p>
+                    </div>
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1505663912202-ac22d4cb3707?auto=format&fit=crop&q=80&w=1200"
+                            alt="Legal certainty" class="visual-mockup">
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="modern-card" data-animate>
+                    <div class="card-content">
+                        <h3>Appoint Trusted Financial Managers</h3>
+                        <p>Designate responsible individuals to manage financial affairs on behalf of your legal heirs,
+                            ensuring smooth estate administration.</p>
+                    </div>
+                    <div class="card-visual">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1200"
+                            alt="Family peace" class="visual-mockup">
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="modern-card" data-animate>
+                    <div class="card-content">
+                        <h3>Support Charity on Your Terms</h3>
+                        <p>Allocate a portion of your estate to charity, ensuring your legacy lives on through giving to
+                            causes you care about.</p>
+                    </div>
+                    <div class="card-visual">
+                        <img src="assets/images/charity_v2.png" alt="Charitable trust and legacy" class="visual-mockup">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title" data-animate>The Path to Protection: Our 4-Step Process</h2>
+            <div class="process-timeline">
+                <div class="process-step" data-animate>
+                    <h3>Step 1: Consultation & Eligibility Review</h3>
+                    <p>Submit your details. We review your residency and assets to recommend DIFC (Dubai) or ADJD (Abu
+                        Dhabi) registration and connect you with licensed legal partners.</p>
+                </div>
+                <div class="process-step" data-animate>
+                    <h3>Step 2: Will Drafting & Legal Review</h3>
+                    <p>Our UAE legal partners draft your will according to your wishes. You review, request changes, and
+                        approve the final version.</p>
+                </div>
+                <div class="process-step" data-animate>
+                    <h3>Step 3: Notarization & Official Registration</h3>
+                    <p>We handle notarization, translation, and official DIFC/ADJD registration — making your will 100%
+                        enforceable under UAE law.</p>
+                </div>
+                <div class="process-step" data-animate>
+                    <h3>Step 4: Secure Delivery & Lifetime Support</h3>
+                    <p>Receive your finalized will in digital and physical formats. We provide ongoing support for
+                        future amendments as your life evolves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title" data-animate>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>What is an expats will?</span>
+                        <span class="faq-icon">+</span>
                     </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="who-we-are" id="about">
-            <div class="container">
-                <div class="section-tag-wrapper">
-                    <span class="section-tag">WHO WE ARE</span>
-                </div>
-
-                <h2 class="section-title">
-                    CREDORA IS A FORWARD-THINKING FIRM BUILT ON TRUST, TRANSPARENCY, AND INNOVATION. WE EMPOWER
-                    INDIVIDUALS AND BUSINESSES TO GROW WITH CONFIDENCE.
-                </h2>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3 class="stat-number" data-target="25000" data-suffix="+">0+</h3>
-                        <p class="stat-description">Customers assisted every month for their financial needs</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <h3 class="stat-number" data-target="4.3" data-decimals="1">0.0</h3>
-                            <div class="stars">★★★★★</div>
-                        </div>
-                        <p class="stat-sub">Google Review</p>
-                        <p class="stat-description">Recognized for reliability, service quality, and customer
-                            satisfaction.</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number" data-target="1200" data-separator=",">0</h3>
-                        <p class="stat-description">A strong team of experienced professionals driving excellence every
-                            day.</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number" data-target="30" data-suffix="+">0+</h3>
-                        <p class="stat-description">Decades of financial expertise built on trust, knowledge, and proven
-                            results.</p>
+                    <div class="faq-answer">
+                        <p>Expats will is a legal document that allows foreign nationals living in the UAE to specify
+                            how their assets should be distributed after their death, ensuring their wishes are honored
+                            according to their home country's laws rather than default UAE Sharia inheritance laws. </p>
                     </div>
                 </div>
-            </div>
-            </div>
-        </section>
-
-
-
-        <div class="container">
-            <hr class="section-divider">
-        </div>
-        <section class="services" id="services">
-            <div class="container">
-                <div class="section-tag-wrapper">
-                    <span class="section-tag">OUR SERVICES</span>
-                </div>
-
-                <h2 class="section-headline">WHAT WE OFFER</h2>
-
-                <div class="services-grid">
-                    <div class="service-card" style="background-image: url('assets/images/credit\ card.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">CREDIT CARD</h3>
-                            <p class="service-desc">Flexible cards with rewards and cashback options.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-card" style="background-image: url('assets/images/whatweoffer\ -2.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">PERSONAL FINANCE</h3>
-                            <p class="service-desc">Quick funds with easy approval and low rates.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-card" style="background-image: url('assets/images/whatweoffer\ -\ 3.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">AUTO FINANCE</h3>
-                            <p class="service-desc">Affordable financing to drive your dream car.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-card" style="background-image: url('assets/images/whatweoffer\ -1.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">HOME FINANCE</h3>
-                            <p class="service-desc">Tailored home loans to fit your budget.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-card" style="background-image: url('assets/images/whatweoffer\ -4.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">SME FINANCE</h3>
-                            <p class="service-desc">Quick funds with easy approval and low rates.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
-                    </div>
-                    <div class="service-card" style="background-image: url('assets/images/whatweoffer\ -5.webp')">
-                        <div class="service-overlay">
-                            <h3 class="service-title">PAYROLL ACCOUNTS</h3>
-                            <p class="service-desc">Simple, secure, and on-time salary payments.</p>
-                            <a href="#" class="know-more">KNOW MORE</a>
-                        </div>
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>Why do I need a will in the UAE?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Without a will, your assets in the UAE will be distributed according to Sharia law,
+                            regardless of your religion or nationality. This may not align with your wishes and could
+                            create complications for your family.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <hr class="section-divider">
-        </div>
-
-        <section class="partners">
-            <div class="container">
-                <div class="section-tag-wrapper align-center">
-                    <span class="section-tag">WE WORK WITH</span>
-                </div>
-
-                <h2 class="section-headline align-center">TRUSTED BANK PARTNERS</h2>
-
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <img src="assets/images/emirates_nbd.webp" alt="Emirates NBD">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/fab.webp" alt="FAB">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/Dubai islamic bank.webp" alt="Dubai Islamic Bank">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/Emirates Islamic.webp" alt="Emirates Islamic">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/commercial_bank_of_dubai.webp" alt="CBD">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/rak_bank.webp" alt="RAKBANK">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/sharjah_islamic_bank.webp" alt="Sharjah Islamic Bank">
-                    </div>
-                    <div class="partner-card">
-                        <img src="assets/images/deem.webp" alt="Deem">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <hr class="section-divider">
-        </div>
-
-        <section class="our-goal">
-            <div class="container goal-container">
-                <div class="goal-card">
-                    <div class="goal-content-top">
-                        <span class="goal-tag">OUR GOAL</span>
-                        <h2 class="goal-title">EMPOWERING FINANCIAL<br>CONFIDENCE THROUGH<br>TRUST AND INNOVATION</h2>
-                        <p class="goal-desc">
-                            At Credora, our mission is to simplify financial access through trust, transparency, and
-                            innovation. We strive to connect individuals and businesses with the right banking solutions
-                            empowering them to achieve their goals with confidence and ease.
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>Do I need a UAE will if I already have one in my home country?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. A will from your home country typically does not cover UAE-based assets such as
+                            property, bank accounts, or investments. You need a separate UAE-registered will for these
+                            assets.
                         </p>
                     </div>
-                    <a href="#about" class="find-about-btn">
-                        Find About Us
-                        <span class="arrow-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </span>
-                    </a>
                 </div>
-                <div class="goal-image">
-                    <img src="assets/images/our-goal.webp" alt="Credora Goal">
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>Can I have more than one will?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you can have multiple wills for assets in different countries. However, ensure they
+                            don't contradict each other and clearly specify which assets each will covers.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>What's the difference between DIFC and ADJD wills?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DIFC wills cover assets across all UAE emirates and follow common law principles. ADJD (Abu
+                            Dhabi Judicial Department) wills primarily cover assets in Abu Dhabi. Both allow non-Muslims
+                            to bypass Sharia inheritance laws.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-animate>
+                    <button class="faq-question">
+                        <span>Can I update my will after registration?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Life changes like marriage, new children, or property purchases require updates. We
+                            provide ongoing support to coordinate amendments and re-registration with your legal
+                            partner.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <div class="container">
-            <hr class="section-divider">
         </div>
+    </section>
 
-        <section class="why-credora">
-            <div class="container">
-                <div class="why-header">
-                    <span class="why-tag">WHY CREDORA</span>
-                    <h2 class="why-title">BECAUSE WE MAKE FINANCE SIMPLE,<br>TRANSPARENT, AND TAILORED TO YOU!</h2>
-                </div>
+    <!-- Final Enrollment -->
+    <!-- <section class="enrollment">
+        <div class="container" data-animate>
+            <div class="enroll-card">
+                <h2>Protect Your Legacy Today</h2>
+                <p>Don't leave your family's future to chance. Let our specialists navigate the complexity for you.</p>
 
-                <div class="why-grid">
-                    <div class="why-card" style="background-image: url('assets/images/access\ to\ top\ banks.webp')">
-                        <div class="why-overlay">
-                            <span class="why-number">01</span>
-                            <div class="why-content">
-                                <h3 class="why-card-title">ACCESS TO TOP BANKS</h3>
-                                <p class="why-card-desc">Get exclusive deals and financial products from the UAE's
-                                    leading banks all in one place.</p>
-                            </div>
-                        </div>
+                <form id="enroll-form" class="form-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Doe" required>
                     </div>
-                    <div class="why-card"
-                        style="background-image: url('assets/images/fast\ &\ hassle\ free\ process.webp')">
-                        <div class="why-overlay">
-                            <span class="why-number">02</span>
-                            <div class="why-content">
-                                <h3 class="why-card-title">FAST & HASSLE-FREE PROCESS</h3>
-                                <p class="why-card-desc">Enjoy a smooth, paper-light application experience with quick
-                                    approvals and expert support.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
                     </div>
-                    <div class="why-card" style="background-image: url('assets/images/tailored\ financial.webp')">
-                        <div class="why-overlay">
-                            <span class="why-number">03</span>
-                            <div class="why-content">
-                                <h3 class="why-card-title">TAILORED FINANCIAL SOLUTIONS</h3>
-                                <p class="why-card-desc">Whether it's a credit card, personal loan, or mortgage. We
-                                    match you with the right option for your goals.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="123 456 789" required>
                     </div>
-                    <div class="why-card" style="background-image: url('assets/images/transparent\ &\ reliable.webp')">
-                        <div class="why-overlay">
-                            <span class="why-number">04</span>
-                            <div class="why-content">
-                                <h3 class="why-card-title">TRANSPARENT & RELIABLE</h3>
-                                <p class="why-card-desc">No hidden fees, no confusion just clear, honest guidance every
-                                    step of the way.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label>Country of Residence</label>
+                        <input type="text" placeholder="e.g. United Arab Emirates" required>
                     </div>
-                </div>
+                    <div class="form-group full-width">
+                        <label>Your Message</label>
+                        <textarea placeholder="Tell us more about your requirements..." rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Submit & Enroll Now</button>
+                </form>
             </div>
-        </section>
-
-        <div class="container">
-            <hr class="section-divider">
         </div>
+    </section> -->
 
-        <section class="cta-section">
-            <div class="cta-card">
-                <div class="container">
-                    <div class="cta-content-box">
-                        <h2 class="cta-title">CONNECTING YOU<br>TO THE RIGHT BANK</h2>
-                        <p class="cta-desc">
-                            Schedule a free consultation and discover how Credora can streamline your operations,
-                            optimize
-                            performance, and deliver measurable results.
-                        </p>
-                        <a href="#" class="cta-btn">
-                            Get Started Today
-                            <span class="arrow-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">Credora</div>
-                    <p class="footer-tagline">Connecting you to the Right Bank, The Easy Way</p>
-                    <a href="contact-us.html" class="footer-contact-btn">Contact Us</a>
-                </div>
-
                 <div class="footer-col">
-                    <h4 class="footer-heading">Menu</h4>
+                    <div class="logo" style="color: var(--white); margin-bottom: 20px;">
+                        <img src="assets/images/logo.png" alt="expatsWills Logo"
+                            style="filter: brightness(0) invert(1);">
+                        <span>ExpatsWills</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">The UAE’s first will-drafting company,
+                        with over 21 years of experience supporting expats with clear, court-recognized succession
+                        planning across the Abu Dhabi Judicial Department, Dubai Courts, and the DIFC.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Partnerships</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
+                        <!-- <li><a href="#">About Us</a></li> -->
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#home">Register Now</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
-                    <h4 class="footer-heading">Socials</h4>
+                    <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Linkedin</a></li>
-                        <li><a href="#">Twitter (X)</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
-                    <h4 class="footer-heading">Contact</h4>
-                    <ul class="footer-contact-info">
-                        <li>+971 4 875 4605</li>
-                        <li>info@credorafinance.com</li>
-                        <li>Office No 901, Al Gurg Tower 3,<br>Baniyas Road, Deira,<br>Dubai, UAE</li>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span style="font-size: 0.9rem; line-height: 1.5;">
+                                P.O Box 118467 G-41 Red Avenue Building,<br>
+                                57th Street - Al Garhoud, Dubai - UAE
+                            </span>
+                        </li>
+                        <li>
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:info@expatswills.com">info@expatswills.com</a>
+                        </li>
+                        <li>
+                            <i data-lucide="phone"></i>
+                            <a href="tel:043792855">04 379 2855</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Credora Finance, UAE</p>
-                <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="termsandcondtions.html">T&C</a> |
-                    Developed by <a href="https://gulfnados.com/" target="_blank" rel="noopener noreferrer">Gulfnados
-                        Technology Systems</a>
-                </p>
+            <div class="disclaimer">
+                ExpatsWills is an independent facilitator and consultant, providing these services with Just Wills as our
+                parent organization. We are not a law firm; legal services are provided through our network of licensed
+                partner attorneys and accredited entities.
+            </div>
+            <div style="text-align: left; margin-top: 40px; color: rgba(255,255,255,0.4); font-size: 0.8rem;">
+                &copy; 2026 ExpatsWills. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
-        <div class="mobile-menu-container">
-            <div class="mobile-menu-header">
-                <div class="mobile-logo">
-                    <span class="logo-text">Credora</span>
-                </div>
-                <button class="mobile-close-btn" id="mobileMenuClose" aria-label="Close menu">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="mobile-menu-body">
-                <ul class="mobile-nav-list">
-                    <li class="mobile-nav-item">
-                        <a href="#home" class="mobile-nav-link">Home</a>
-                        <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="#services" class="mobile-nav-link">Services</a>
-                        <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="about-us.html" class="mobile-nav-link">About Us</a>
-                        <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="faq.html" class="mobile-nav-link">FAQs</a>
-                        <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a href="#" class="mobile-nav-link">Partnerships</a>
-                        <svg class="chevron-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </li>
-                </ul>
-
-                <div class="mobile-menu-footer">
-                    <a href="contact-us.html" style="text-decoration: none;">
-                        <button class="mobile-action-btn">Contact Us</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
